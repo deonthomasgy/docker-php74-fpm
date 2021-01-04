@@ -1,4 +1,4 @@
-# PHP-FPM 7.4
+# PHP-FPM 7.4 with Composer 2 and Node 10
 
 PHP-FPM (FastCGI Process Manager) is an alternative PHP FastCGI implementation with some additional features useful for sites of any size, especially busier sites. 
 
