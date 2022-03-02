@@ -13,10 +13,10 @@ RUN apt-get update && apt-get install -y \
         libonig-dev \
         libzip-dev \
         gnupg \
-    && ln -s /usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/bin-Q16/MagickWand-config /usr/bin \
+    && ln -s /usr/lib/x86_64-linux-gnu/ImageMagick-6.9.11/bin-q16/MagickWand-config /usr/bin \
     && pecl install imagick \
     && echo "extension=imagick.so" > /usr/local/etc/php/conf.d/ext-imagick.ini \
-    && pecl install mcrypt-1.0.3 \
+    && pecl install mcrypt-1.0.4 \
     && docker-php-ext-install iconv pdo_mysql bcmath exif \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd zip mysqli intl\
@@ -37,7 +37,7 @@ RUN for i in $(seq 1 3); do pecl install -o --nobuild redis && s=0 && break || s
     && docker-php-ext-enable redis \
     && cd -
 
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install nodejs -y
 
 RUN echo "php_value[memory_limit] = 512M" >> /usr/local/etc/php-fpm.conf
