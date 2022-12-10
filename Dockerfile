@@ -1,4 +1,4 @@
-FROM php:7.4-fpm-buster
+FROM php:7.4.33-fpm-buster
 
 MAINTAINER Deon Thomas "Deon.Thomas.GY@gmail.com"
 
